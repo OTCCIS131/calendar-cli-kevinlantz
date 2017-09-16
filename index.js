@@ -42,39 +42,76 @@ for (let month of year.by('months')) {
 
         return _.padEnd(date, 2, '  ')
     })
+    firstDay()
+    chunks()
 
-    //  chunks()
 
     joined()
         //console.log(paddedDays + "")
-    firstDay()
+
 
     console.log(_.chunk(paddedDays, 7))
     console.log(_.join(paddedDays, ' '))
 
-    let monthRange = month.range('month')
-    let fir = monthRange.start.day()
-
-    console.log(fir)
-
     function firstDay() {
+        if (month.format('MMMM') == "February") {
+            //paddedDays.unshift("             ")
+            paddedDays.unshift("  ", "  ", "  ")
+        }
+        if (month.format('MMMM') == "March") {
+            //paddedDays.unshift("             ")
+            paddedDays.unshift("  ", "  ", "  ")
+        }
+        if (month.format('MMMM') == "April") {
+            //paddedDays.unshift("             ")
+            paddedDays.unshift("  ", "  ", "  ", "  ", "  ", "  ")
+        }
+        if (month.format('MMMM') == "May") {
+            //paddedDays.unshift("             ")
+            paddedDays.unshift("  ")
+        }
+        if (month.format('MMMM') == "June") {
+            //paddedDays.unshift("             ")
+            paddedDays.unshift("  ", "  ", "  ", "  ")
+        }
+
+        if (month.format('MMMM') == "July") {
+            //paddedDays.unshift("             ")
+            paddedDays.unshift("  ", "  ", "  ", "  ", "  ", "  ")
+        }
+
+        if (month.format('MMMM') == "August") {
+            //paddedDays.unshift("             ")
+            paddedDays.unshift(" ", "  ")
+        }
+        if (month.format('MMMM') == "September") {
+            //paddedDays.unshift("             ")
+            paddedDays.unshift(" ", "  ", "  ", "  ", "  ")
+        }
+
+        if (month.format('MMMM') == "November") {
+            //paddedDays.unshift("             ")
+            paddedDays.unshift('  ', "  ", "  ")
+        }
 
         if (month.format('MMMM') == "December") {
             //paddedDays.unshift("             ")
             paddedDays.unshift('  ', "  ", "  ", "  ", "  ")
         }
+
     }
 
     function chunks() {
-
         _.chunk(paddedDays, 7)
+
     }
 
     function joined() {
-        paddedDays.join(paddedDays, ' ')
+        _.join(paddedDays, ' ')
             // let r = paddedDays.join()
             // console.log(r)
     }
+
     //  console.log(paddedDays + " ")
-    //console.log(paddedDays)
+    // console.log(paddedDays)
 }
